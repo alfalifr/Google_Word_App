@@ -16,6 +16,7 @@
 package com.example.wordsapp
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -49,6 +50,12 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController)
     }
 
-    override fun onSupportNavigateUp(): Boolean =
-        navController.navigateUp() || super.onSupportNavigateUp()
+    /**
+     * Called when "Up" navigation button
+     * (button with back arrow on app bar) pressed
+     */
+    override fun onSupportNavigateUp(): Boolean {
+        Log.e("TAG", "onSupportNavigateUp()")
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
 }
